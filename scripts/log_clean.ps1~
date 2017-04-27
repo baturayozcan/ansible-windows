@@ -1,0 +1,32 @@
+#Get the date of 7 days ago from now
+$age=(get-date).AddDays(-7)
+
+#Check MT4 journal logs and delete the ones older than last 7 days.
+$mt4logs="D:\MetaTraderServer4\logs\*.log"
+Get-ChildItem $mt4logs -Force | where-object {$_.LastWriteTime -le $age} | Remove-Item -Force
+
+
+#Check ActiveMQ logs and delete the ones older than last 7 days.
+$amqlogs="D:\MetaTraderServer4\plugins\Mt4ToActiveMQ_Plugin\Logs\*.log"
+Get-ChildItem $amqlogs -Force | where-object {$_.LastWriteTime -le $age} | Remove-Item -Force
+
+#Check datafeed logs and delete the ones older than last 7 days.
+$datafeedlogs="D:\MetaTraderServer4\datafeed\*.log"
+Get-ChildItem $datafeedlogs -Force | where-object {$_.LastWriteTime -le $age} | Remove-Item -Force
+
+#Check tick history and delete the ones older than last day.
+$tickhistory="D:\MetaTraderServer4\history\*.*"
+$tickhistory_age=(get-date).AddDays(-1)
+Get-ChildItem $tickhistory -Force | where-object {$_.LastWriteTime -le $tickhistory_age} | Remove-Item -Force
+
+#Check PrimeXM Bridge logs and delete the ones older than last 7 days.
+$primexmbridge_logs="D:\MetaTraderServer4\plugins\primexm_bridge\log\*.zip"
+Get-ChildItem $primexmbridge_logs -Force | where-object {$_.LastWriteTime -le $age} | Remove-Item -Force
+
+#Check confirms and delete the ones older than last 7 days.
+$confirms="D:\MetaTraderServer4\confirms\"
+Get-ChildItem $confirms -Force | where-object {$_.LastWriteTime -le $age} | Remove-Item -Force
+
+#Check LogGrepper logs and delete the ones older than last 7 days.
+$loggrepper_logs="D:\LogGrepper\logs\*.log"
+Get-ChildItem $loggrepper_logs -Force | where-object {$_.LastWriteTime -le $age} | Remove-Item -Force
