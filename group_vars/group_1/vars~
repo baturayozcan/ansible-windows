@@ -1,9 +1,0 @@
-ansible_connection: winrm
-ansible_port: 5986
-ansible_winrm_server_cert_validation: ignore
-ansible_user: ansible
-ansible_password: rW9oRB4aw8Mj
-#ansible_user: monitoring
-#ansible_password: jC7rUQoFWWhiLRdpJMZG
-ansible_winrm_operation_timeout_sec: 60
-ansible_winrm_read_timeout_sec: 70
