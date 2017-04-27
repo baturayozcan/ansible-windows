@@ -1,0 +1,15 @@
+--- 
+- 
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Add a user"
+  tasks: 
+    - 
+      name: "Add User"
+      win_user: 
+        groups: 
+          - Administrators
+        groups_action: add
+        name: username
+        password: password
+        state: present

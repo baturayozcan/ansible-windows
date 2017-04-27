@@ -1,0 +1,7 @@
+- name: Run PS script
+  hosts: '{{ hosts }}'
+  gather_facts: false
+  tasks:
+    - name: Clean Logs
+      script: /etc/ansible/files/mypowershellscript.ps1
+
