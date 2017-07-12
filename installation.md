@@ -32,7 +32,7 @@ This documentation is about how to install and configure Ansible on CentOS in or
       
 6. Edit "/etc/ansible/hosts" file to create your hosts. You can define multiple groups in your hosts file also.
      sudo nano /etc/ansible/hosts
-           
+      
      ![alt text](images/Screenshot_144.png)
      
      You see there is a group named "prod" in the hosts file. You can define groups like "[group_name]" and list the servers under it.
