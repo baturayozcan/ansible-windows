@@ -1,4 +1,4 @@
-# How to install and configure Ansible on CentOS in order to manage Windows hosts remotely from a central machine?
+# How to install and configure Ansible on CentOS in order to manage Windows hosts?
 
 
 
@@ -45,13 +45,13 @@
      
 10. Configure "vars" file with below credentials for first use (will be updated after "ansible" user is created on all hosts)
  
-        ansible_connection: winrm
-        ansible_port: 5986
-        ansible_winrm_server_cert_validation: ignore
-        ansible_user: baturay
-        ansible_password: mypassword
-        ansible_winrm_operation_timeout_sec: 60
-        ansible_winrm_read_timeout_sec: 70
+      ansible_connection: winrm
+      ansible_port: 5986
+      ansible_winrm_server_cert_validation: ignore
+      ansible_user: baturay
+      ansible_password: mypassword
+      ansible_winrm_operation_timeout_sec: 60
+      ansible_winrm_read_timeout_sec: 70
 
      You need an administrator account to use Ansible remotely. We can use it to create "ansible" user on all hosts.
 
@@ -99,13 +99,13 @@
 
 16. We do not need to use other administrator user (now we have "ansible" user) anymore, so we should edit our "vars" and "vault" files. Open /etc/ansible/group_vars/prod/vars file and edit it like below :
 
-         ansible_connection: winrm
-         ansible_port: 5986
-         ansible_winrm_server_cert_validation: ignore
-         ansible_user: ansible
-         ansible_password: ansibleuserpassword
-         ansible_winrm_operation_timeout_sec: 60
-         ansible_winrm_read_timeout_sec: 70
+      ansible_connection: winrm
+      ansible_port: 5986
+      ansible_winrm_server_cert_validation: ignore
+      ansible_user: ansible
+      ansible_password: ansibleuserpassword
+      ansible_winrm_operation_timeout_sec: 60
+      ansible_winrm_read_timeout_sec: 70
          
 17. Open /etc/ansible/group_vars/prod/vault and change the password with "ansible" user's one.
 
@@ -133,10 +133,10 @@
    state : This is used to choose either you want to add a user or delete it. Use "present" to add and "absent" to delete.
    
 # Extras :
+   
+   You can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html
 
-    You can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html
-
-    For general documentation and all other features of Ansible, see http://docs.ansible.com/
+   For general documentation and all other features of Ansible, see http://docs.ansible.com/
 
 
 
