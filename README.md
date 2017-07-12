@@ -147,6 +147,3 @@ This documentation is about how to install and configure Ansible on CentOS in or
     For general documentation and all other features of Ansible, see http://docs.ansible.com/
 
 
-
-
-![alt text](images/Screenshot_144.png)
