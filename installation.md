@@ -36,7 +36,7 @@ This documentation is about how to install and configure Ansible on CentOS in or
      ![alt text](images/Screenshot_144.png)
      
      You see there is a group named "prod" in the hosts file. You can define groups like "[group_name]" and list the servers under it.
-     
+      
 7. Create "group_vars" directory under "/etc/ansible".
      mkdir group_vars /etc/ansible
      
