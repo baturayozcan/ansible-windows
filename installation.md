@@ -74,21 +74,21 @@
      mkdir playbooks /etc/ansible/
      
 14. Create "manage_win_users.yml" file under "/etc/ansible/playbooks/" (sudo nano manage_win_users.yml /etc/ansible/playbooks/) and configure it like below :  
-        -  
-          gather_facts: false  
-          hosts: "{{ hosts }}"  
-          name: "Manage Windows Users"  
-          tasks:  
-            -  
-              name: "Configure a User"  
-              win_user:  
-              groups:  
-                - Administrators  
-              groups_action: add  
-              name: "{{ name }}"  
-              password: "{{ password }}"  
-              password_never_expires: true  
-              state: "{{ state }}"  
+        &nbsp;&nbsp;&nbsp;-  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gather_facts: false  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hosts: "{{ hosts }}"  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: "Manage Windows Users"  
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tasks:  
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: "Configure a User"  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win_user:  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups:  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Administrators  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups_action: add  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: "{{ name }}"  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: "{{ password }}"  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password_never_expires: true  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state: "{{ state }}"  
 
       You should check the syntax of your .yml file every time when you edit it. (See "Checking The Syntax of YML Files" section of this document)  
  
@@ -138,6 +138,7 @@
 ## Extras :
 
   You can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html  
+  
   For general documentation and all other features of Ansible, see http://docs.ansible.com/
 
 
