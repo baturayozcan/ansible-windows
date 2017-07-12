@@ -1,11 +1,8 @@
-# How to install and configure Ansible on CentOS in order to manage Windows hosts?
-
-
 This documentation is about how to install and configure Ansible on CentOS in order to manage Windows hosts remotely from a central machine.
 
 
 
-# Windows Hosts Setup :
+Windows Hosts Setup :
 
 1. Download the powershell script from https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1 and run it as administrator on all Windows machines that you want to manage.
    
@@ -13,7 +10,7 @@ This documentation is about how to install and configure Ansible on CentOS in or
     netstat -ano | find "5986"
 
 
-# Control Machine Setup :
+Control Machine Setup :
 
 1. Python is needed for Ansible to work. Check if Python is installed on your control machine and install it if not exist. (Run "python" command in the terminal to see if python is installed or not)
      sudo yum install python
@@ -26,16 +23,15 @@ This documentation is about how to install and configure Ansible on CentOS in or
      
 4. Install EPEL release for CentOS to find "ansible" packages in repository.
      sudo yum install epel-release
-      
+     
 5. Install Ansible. (Default path for Ansible is : /etc/)
      sudo yum install ansible
-      
-6. Edit "/etc/ansible/hosts" file to create your hosts. You can define multiple groups in your hosts file also.                               sudo nano /etc/ansible/hosts
-      
-     ![alt text](images/Screenshot_144.png)
      
+6. Edit "/etc/ansible/hosts" file to create your hosts. You can define multiple groups in your hosts file also.
+     sudo nano /etc/ansible/hosts
+           
      You see there is a group named "prod" in the hosts file. You can define groups like "[group_name]" and list the servers under it.
-      
+     
 7. Create "group_vars" directory under "/etc/ansible".
      mkdir group_vars /etc/ansible
      
@@ -69,7 +65,6 @@ This documentation is about how to install and configure Ansible on CentOS in or
  
      Your "vault" file should look like this :
 
-     ![alt text](images/Screenshot_145.png)
         
 13. Create "playbooks" directory under "/etc/ansible/".
      mkdir playbooks /etc/ansible/
@@ -118,7 +113,7 @@ This documentation is about how to install and configure Ansible on CentOS in or
       sudo ansible-vault encrypt /etc/ansible/group_vars/prod/vars
       sudo ansible-vault encrypt /etc/ansible/group_vars/prod/vault
       
-# Checking The Syntax of YML Files :
+Checking The Syntax of YML Files :
 
 1. Open your .yml file.
 2. Copy all the content.
@@ -128,7 +123,7 @@ This documentation is about how to install and configure Ansible on CentOS in or
 6. Copy verified content to your .yml file.
 7. Save your file.
 
-# Passing Arguments to Playbooks :
+Passing Arguments to Playbooks :
 
    You need to add "--extra-vars" option to your command (ex: --extra-vars "hosts=prod")
 
@@ -136,8 +131,8 @@ This documentation is about how to install and configure Ansible on CentOS in or
    name : This is the name of the user that you want to create on the remote machine.
    password : This is the password of the user that you want to create on the remote machine.
    state : This is used to choose either you want to add a user or delete it. Use "present" to add and "absent" to delete.
-    
-# Extras :
+   
+Extras :
 
     You can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html
 
