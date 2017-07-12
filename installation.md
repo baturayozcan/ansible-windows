@@ -137,7 +137,7 @@ This documentation is about how to install and configure Ansible on CentOS in or
    name : This is the name of the user that you want to create on the remote machine.
    password : This is the password of the user that you want to create on the remote machine.
    state : This is used to choose either you want to add a user or delete it. Use "present" to add and "absent" to delete.
-   
+    
 # Extras :
 
     You can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html
