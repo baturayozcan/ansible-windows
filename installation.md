@@ -26,7 +26,7 @@ This documentation is about how to install and configure Ansible on CentOS in or
      
 4. Install EPEL release for CentOS to find "ansible" packages in repository.
      sudo yum install epel-release
-     
+      
 5. Install Ansible. (Default path for Ansible is : /etc/)
      sudo yum install ansible
       
