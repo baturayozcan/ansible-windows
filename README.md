@@ -3,6 +3,8 @@ This repository has playbooks to do some basic tasks to manage Windows hosts usi
 
 Also you can read documentation about how to install and configure Ansible on CentOS in order to manage Windows hosts.
 
+Go to [a link](installation.md)
+
 
 
 
