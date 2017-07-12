@@ -2,7 +2,7 @@
 
 
 
-# Windows Hosts Setup :
+## Windows Hosts Setup :
 
 1. Download the powershell script from https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1 and run it as administrator on all Windows machines that you want to manage.
    
@@ -10,7 +10,7 @@
     netstat -ano | find "5986"
 
 
-# Control Machine Setup :
+## Control Machine Setup :
 
 1. Python is needed for Ansible to work. Check if Python is installed on your control machine and install it if not exist. (Run "python" command in the terminal to see if python is installed or not)
      sudo yum install python
@@ -113,7 +113,7 @@
       sudo ansible-vault encrypt /etc/ansible/group_vars/prod/vars
       sudo ansible-vault encrypt /etc/ansible/group_vars/prod/vault
       
-# Checking The Syntax of YML Files :
+## Checking The Syntax of YML Files :
 
 1. Open your .yml file.
 2. Copy all the content.
@@ -123,19 +123,16 @@
 6. Copy verified content to your .yml file.
 7. Save your file.
 
-# Passing Arguments to Playbooks :
-
+## Passing Arguments to Playbooks :
    You need to add "--extra-vars" option to your command (ex: --extra-vars "hosts=prod")
-
+   
    hosts : You can define hosts on which you want to run the script. They should be defined on /etc/ansible/hosts file.
    name : This is the name of the user that you want to create on the remote machine.
    password : This is the password of the user that you want to create on the remote machine.
    state : This is used to choose either you want to add a user or delete it. Use "present" to add and "absent" to delete.
    
-# Extras :
-   
+## Extras :
    You can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html
-
    For general documentation and all other features of Ansible, see http://docs.ansible.com/
 
 
