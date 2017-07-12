@@ -4,7 +4,8 @@
 
 ## Windows Hosts Setup :
 
-1. Download the powershell script from https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1 and run it as administrator on all Windows machines that you want to manage.
+1. Download the powershell script from https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1   
+   and run it as administrator on all Windows machines that you want to manage.
    
 2. Check the port "5986" is listening.
     netstat -ano | find "5986"
