@@ -133,7 +133,7 @@
    
 ## Extras :
    You can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html
-   For general documentation and all other features of Ansible, see http://docs.ansible.com/
+   &nbsp;&nbsp;&nbsp;For general documentation and all other features of Ansible, see http://docs.ansible.com/
 
 
 
