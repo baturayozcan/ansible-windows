@@ -126,7 +126,8 @@
 ## Passing Arguments to Playbooks :
    You need to add "--extra-vars" option to your command (ex: --extra-vars "hosts=prod")
    
-   hosts : You can define hosts on which you want to run the script. They should be defined on /etc/ansible/hosts file.⋅⋅name : This is the name of the user that you want to create on the remote machine.
+   hosts : You can define hosts on which you want to run the script. They should be defined on /etc/ansible/hosts file.
+   name : This is the name of the user that you want to create on the remote machine.
    password : This is the password of the user that you want to create on the remote machine.
    state : This is used to choose either you want to add a user or delete it. Use "present" to add and "absent" to delete.
    
