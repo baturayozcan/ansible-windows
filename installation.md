@@ -131,7 +131,7 @@
    password : This is the password of the user that you want to create on the remote machine.
    state : This is used to choose either you want to add a user or delete it. Use "present" to add and "absent" to delete.
    
-## Extras :  You can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html  For general documentation and all other features of Ansible, see http://docs.ansible.com/
+## Extras :\s\sYou can check and use other options of win_user module of Ansible by editing your .yml file. More information about win_user module: http://docs.ansible.com/ansible/win_user_module.html \s\sFor general documentation and all other features of Ansible, see http://docs.ansible.com/
 
 
 
