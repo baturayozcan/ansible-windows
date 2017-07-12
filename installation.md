@@ -1,8 +1,8 @@
-This documentation is about how to install and configure Ansible on CentOS in order to manage Windows hosts remotely from a central machine.
+# How to install and configure Ansible on CentOS in order to manage Windows hosts remotely from a central machine?
 
 
 
-Windows Hosts Setup :
+# Windows Hosts Setup :
 
 1. Download the powershell script from https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1 and run it as administrator on all Windows machines that you want to manage.
    
