@@ -1,0 +1,11 @@
+
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Set Time Zone"
+  tasks:
+    -
+      name: "Setting..."
+      win_command: powershell.exe -
+      args:
+        stdin: Set-TimeZone -Name "FLE Standard Time"

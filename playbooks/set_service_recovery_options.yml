@@ -1,0 +1,11 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Set MT4 Recovery Options"
+  tasks:
+    -
+      name: "Setting ..."
+      win_command: sc failure "{{ service_name }}" reset= 86400 actions= restart/6000/restart/6000/restart/6000
+      register: out
+

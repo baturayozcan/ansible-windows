@@ -1,0 +1,14 @@
+
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Set SNMP Security Config"
+  tasks:
+    -
+      name: "Setting..."
+      win_command: powershell.exe -
+      args:
+        stdin: New-ItemProperty -Path HKLM:System\CurrentControlSet\Services\SNMP\Parameters\ValidCommunities -Name gkfx -PropertyType DWord -Value 8 -Force
+      win_command: powershell.exe -
+      arrgs:
+        stdin: New-ItemProperty -Path HKLM:System\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers -Name 1 -PropertyType String -Value 172.30.0.100 -Force

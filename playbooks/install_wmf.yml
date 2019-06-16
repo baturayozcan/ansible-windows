@@ -1,0 +1,15 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Install Windows Management Framework"
+  tasks:
+    -
+      name: Copying .exe file...
+      win_copy:
+        dest: "C:\\ansible\\files\\wmf.msu"
+        src: /etc/ansible/packages/wmf.msu
+    -
+      name: Installing...
+      win_command: "wusa.exe C:/ansible/files/wmf.msu /quiet /norestart"
+

@@ -1,0 +1,12 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Create File or Directory"
+  tasks:
+    -
+      name: "Creating..."
+      win_file:
+        path: "{{ dir_path }}"
+        state: directory
+

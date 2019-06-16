@@ -1,0 +1,10 @@
+--- 
+- 
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Restart Windows"
+  tasks: 
+    - 
+      name: "Reboot the machine"
+      win_reboot:
+

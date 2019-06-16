@@ -1,0 +1,9 @@
+--- 
+- 
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Install an MSI Package To Host Machine"
+  tasks: 
+    - 
+      name: Installing...
+      win_command: "msiexec /p C:\\ansible\\files\\Pscx.msi /qn"

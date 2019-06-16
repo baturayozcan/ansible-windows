@@ -1,0 +1,15 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Install .NET Framework To Host Machine"
+  tasks:
+    -
+      name: Copying .exe file...
+      win_copy:
+        dest: "C:\\ansible\\files\\dotnet.exe"
+        src: /etc/ansible/files/dotnet.exe
+    -
+      name: Installing...
+      win_command: "C:\\ansible\\files\\dotnet.exe /q /norestart"
+

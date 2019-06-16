@@ -1,0 +1,16 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Check DT Client Status"
+  tasks:
+    -
+      name: "Checking..."
+      register: result
+      script: /etc/ansible/ps_scripts/telnet.ps1
+    -
+      name: "Debug PS script"
+      debug:
+          msg: "{{ result.stdout_lines }}"
+
+

@@ -1,0 +1,30 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Download and Install Windows Updates"
+  tasks:
+    -
+      name: "Downloading and Installing..."
+      register: result
+      win_updates:
+        category_names:
+            - Application
+            - Connectors
+            - CriticalUpdates
+            - DefinitionUpdates
+            - DeveloperKits
+            - FeaturePacks
+            - Guidance
+            - SecurityUpdates
+            - Tools
+            - UpdateRollups
+            - Updates
+        log_path: "C:\\ansible\\logs\\{{ lookup('pipe','date +%Y%m%d') }}.log"
+        state: installed
+    -
+      set_fact:
+        op_result: "{{ result }}"
+    -
+      debug: var=op_result
+

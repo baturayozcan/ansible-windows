@@ -1,0 +1,11 @@
+
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Disable Internet Time Synchronization"
+  tasks:
+    -
+      name: "Disabling..."
+      win_command: powershell.exe -
+      args:
+        stdin: New-ItemProperty -Path HKLM:System\CurrentControlSet\Services\W32Time\Parameters -Name Type -PropertyType String -Value NoSync -Force

@@ -1,0 +1,13 @@
+
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Disable A Local User"
+  tasks:
+    -
+      name: "Disabling User ..."
+      win_user:
+        name: "kamer.akin"
+        password: "1expired_Account1"
+        password_never_expires: true
+        account_disabled: yes

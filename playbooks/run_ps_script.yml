@@ -1,7 +1,0 @@
-- name: Run PS script
-  hosts: '{{ hosts }}'
-  gather_facts: false
-  tasks:
-    - name: Run script
-      script: /etc/ansible/files/mypowershellscript.ps1
-

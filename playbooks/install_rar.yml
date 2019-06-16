@@ -1,0 +1,14 @@
+--- 
+- 
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Install WinRar To Host Machine"
+  tasks: 
+    -
+      name: Copying .exe file...
+      win_copy:
+        dest: "C:\\ansible\\files\\winrar.exe"
+        src: /etc/ansible/files/winrar.exe
+    - 
+      name: Installing...
+      win_command: "C:\\ansible\\files\\winrar.exe /S"

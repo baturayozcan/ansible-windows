@@ -1,0 +1,15 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Check The Windows Service is Running"
+  tasks:
+    -
+      name: "Checking ..."
+      register: result
+      script: /etc/ansible/ps_scripts/check_service_status.ps1
+    -
+      name: "Debug PS script"
+      debug:
+          msg: "{{ result.stdout_lines }}"
+

@@ -1,0 +1,10 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Run CLI Command"
+  tasks:
+    -
+      name: "Flush DNS"
+      win_command: "wusa.exe C:/ansible/files/wmf.msu /quiet /norestart"
+

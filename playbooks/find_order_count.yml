@@ -1,0 +1,15 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Check Number of Orders in MT4s"
+  tasks:
+    -
+      name: "Checking..."
+      register: out
+      script: /etc/ansible/ps_scripts/FindOrderCount.ps1
+    -
+      name: "Debug PS script"
+      debug:
+          msg: "{{ out.stdout_lines }}"
+

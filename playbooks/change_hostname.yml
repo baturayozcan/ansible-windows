@@ -1,0 +1,11 @@
+
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Change Host Name"
+  tasks:
+    -
+      name: "Changing Host Name ..."
+      win_command: powershell.exe -
+      args:
+        stdin: Rename-Computer -NewName "Ans-Test" -Restart

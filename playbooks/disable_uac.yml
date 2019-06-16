@@ -1,0 +1,11 @@
+
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Disable UAC"
+  tasks:
+    -
+      name: "Disabling..."
+      win_command: powershell.exe -
+      args:
+        stdin: New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 0 -Force

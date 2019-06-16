@@ -1,0 +1,15 @@
+
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Install Some Windows Features"
+  tasks:
+    -
+      name: "Installing..."
+      win_feature:
+        name:
+        - "SNMP-Service"
+        - "Telnet-Client"
+        state: present
+        include_sub_features: yes
+        include_management_tools: yes

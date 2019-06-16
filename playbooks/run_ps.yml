@@ -1,0 +1,9 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Run PS Script Located on Remote Machine"
+  tasks:
+    -
+      name: Running PS script...
+      win_shell: C:\PROGRA~1\Filebeat\install-service-filebeat.ps1

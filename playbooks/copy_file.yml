@@ -1,0 +1,11 @@
+--- 
+- 
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Copy Files To Host Machine"
+  tasks: 
+    -
+      name: Copying...
+      win_copy:
+        dest: "C:\\ansible\\files\\AWS_S3_credentials.csv"
+        src: /etc/ansible/documents/AWS_S3_credentials.csv

@@ -1,0 +1,12 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Manage files in Windows"
+  tasks:
+    -
+      name: "Create/Remove Files"
+      win_file:
+          path: "D:\MetaTraderServer4\datafeed\FXStreet Feeder\parameters.ini"
+          state: absent
+

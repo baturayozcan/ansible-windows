@@ -1,0 +1,15 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Delete MT4 Logs"
+  tasks:
+    -
+      name: "Running..."
+      register: result
+      script: /etc/ansible/ps_scripts/clean_MT4logs.ps1
+    -
+      name: "Debug PS script"
+      debug:
+          msg: "{{ result.stdout_lines }}"
+

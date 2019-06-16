@@ -1,0 +1,18 @@
+
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Create an Administrator User"
+  tasks:
+    -
+      name: "Creating User ..."
+      win_user:
+        groups:
+          - Administrators
+        groups_action: add
+        name: "{{ user_name }}"
+        password: "{{ user_password }}"
+        password_never_expires: true
+        state: present
+
+

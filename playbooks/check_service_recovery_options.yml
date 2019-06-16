@@ -1,0 +1,15 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Check Windows Service Recovery Options"
+  tasks:
+    -
+      name: "Checking..."
+      register: out
+      win_command: sc qfailure "{{ service_name }}"
+    -
+      name: "Debug"
+      debug:
+          msg: "{{ out.stdout_lines }}"
+

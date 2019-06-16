@@ -1,0 +1,11 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Unzip a .zip File"
+  tasks:
+    -
+      name: Unzipping...
+      win_unzip:
+        dest: "C:\\Program Files\\"
+        src: "C:\\Program Files\\Filebeat.zip"

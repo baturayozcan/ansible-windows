@@ -1,0 +1,10 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Compress GKFX Feeder Logs in MT4s and Move to Backup Drive"
+  tasks:
+    -
+      name: "Running..."
+      script: /etc/ansible/ps_scripts/compress_move_GKFXFeederlogs.ps1
+

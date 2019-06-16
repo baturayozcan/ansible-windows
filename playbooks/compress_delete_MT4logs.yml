@@ -1,0 +1,17 @@
+---
+-
+  gather_facts: false
+  hosts: "{{ hosts }}"
+  name: "Compress and Delete MT4 Logs"
+  tasks:
+    -
+      when: inventory_hostname in groups["prod"]
+      name: "Running..."
+      register: result
+      script: /etc/ansible/ps_scripts/compress_delete_MT4logs.ps1
+    -
+      when: inventory_hostname in groups["prod"]
+      name: "Debug PS script"
+      debug:
+          msg: "{{ result.stdout_lines }}"
+
